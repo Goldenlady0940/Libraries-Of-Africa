@@ -1,0 +1,26 @@
+
+.account{
+    /* text-align: center; */
+    /* align-items: center; */
+    border: 1px solid red;
+    height: 450px;
+}
+.account form{
+    margin-left: 20%;
+    border: 1px solid red;
+    
+}
+.account form label{
+    font-size: 1.2rem;
+}
+.account form input{
+    width: 15rem;
+    padding: 0.5rem;
+}
+.account form .finish{
+    background-color: rgb(253, 212, 135);
+    height:50px;
+    width:100px;
+    border-radius: 20px;
+    margin-left: 55rem;
+}
