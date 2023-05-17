@@ -1,0 +1,40 @@
+
+.account{
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    /* background-image: url("lib.jpg"); */
+} 
+form{
+    box-shadow: 10px 10px 5px black;
+    width: 800px;
+    padding: 30px;
+   border-radius: 15px;
+   border: red 1px solid;
+    
+}
+label{
+    font-size: 18px;
+    padding: 10px;
+    /* color: white; */
+}
+
+input:not(#gender) {
+    width: 15rem;
+    padding: 10px ;
+}
+  
+.account form .finish{
+    /* background-color: rgb(253, 212, 135);
+    height:50px;
+    width:100px;
+    border-radius: 20px; */
+    float: right;
+    padding: 10px 15px;
+    font-size: large;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #e7b69b;
+}

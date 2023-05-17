@@ -1,0 +1,98 @@
+/* basic style  */
+*{
+    font-family: "Footlight MT Light";
+}
+img{
+    max-width: 100%;
+}
+.title
+{
+height: 50vh; 
+text-align:center;
+background-color: #706671;
+/* background-image: url(images/1.jpg); */
+background-size: 100% 100%;
+color:#fff;
+padding-top:200px; 
+
+
+}
+.title h1{
+    font-size: 5vw;
+    position: relative;
+    top:15px;
+    opacity: 1;
+}
+.bu{
+    z-index: 1;
+    position: relative;
+    font-size: 50px;
+    background-color: transparent;
+    color:#fff;
+    border: none;
+    opacity: 0.7;
+
+   
+   
+    text-decoration: none;
+    transition: background-color .3s;
+   
+  
+
+}
+.bu:hover{
+    background-color:#333;
+    color:#fff;
+    cursor: pointer;
+}
+ .pre
+{
+float:left;
+}
+.next
+{
+float:right;
+}
+
+.slider
+    {
+       display: none; 
+    }
+.slider
+{
+    background-color: #33373a;
+    margin-top:0px;
+   height: 20vh;
+    text-align: center;
+    box-shadow: -4px -9px 15px #333;
+
+}
+.slider img{
+ display: inline-block;
+ max-width: 100%;
+
+border: 5px solid #fff;
+ margin-top:15px;
+
+
+}
+.slider img:hover{
+    opacity: 0.2;
+cursor: pointer;
+
+} 
+.title
+{
+    clear: both;
+}
+
+.list{
+    position: relative;
+    margin-left: 100px;
+}
+/* top end  */
+
+
+
+
+

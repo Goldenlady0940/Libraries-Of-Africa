@@ -1,0 +1,81 @@
+.header
+{
+    flex-grow: 1;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+.header .logo{
+    width:30%;
+}
+.header .logo img
+{
+    flex-grow: 1;
+    border-radius: 50px;
+    width: 15%;
+}
+.header .logo p
+{
+    position: absolute;
+    left: 8%;
+    top: 2%;
+    font-size: 28px;
+    font-weight: 900;
+    font-family: cursive;
+}
+.header .menu
+{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color:white;
+    border: 1px red solid;
+    padding-left: 60px;
+}
+.menu ul{
+    
+    border-top: 10px solid white;
+    background-color: white;
+    align-items: right;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 10px;
+    gap: 80px;
+    border: red 1px solid;
+    
+}
+.menu ul li{
+    list-style: none;
+}
+.menu ul li a 
+{
+    color: black;
+    text-decoration: none;
+    border: 1px red solid;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.menu ul li button{
+    border: 1px red solid;
+    position: absolute;
+    width: 20%;
+    height: 70%;
+    top: 10%;
+    left: 80%;
+    background-color: #ffbf23;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.menu ul li button:hover{
+    color: #ffbf23;
+    background-color: black;
+}
+.menu ul li a:hover
+{
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+   
+}
