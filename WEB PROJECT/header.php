@@ -21,7 +21,7 @@
             <ul>
                 <li><a href="homepage.php">Home</a> </li>
                 <li><a href="loginpage.php">Login</a></li>
-                <li><a href="homepage.php#blog">Blog</a></li>
+                <li><a href="newLibrary.php">Library</a></li>
                 <li><a href="location.php">Location</a></li>
                 <li><a href="homepage.php#contact">Contact Us</a></li>
                 <li><button>Go Premium</button></li>

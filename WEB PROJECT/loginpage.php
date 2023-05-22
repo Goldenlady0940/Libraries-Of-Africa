@@ -32,7 +32,7 @@
                 
                 <a href="forgetPage.php">Forget Password?</a><br>
                 
-                <button type="submit"> LOGIN</button>
+                <button type="submit" name="submit"> LOGIN</button>
                 
             </form>
             

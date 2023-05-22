@@ -1,6 +1,7 @@
             <?php
             session_start();
            require"connect.php";
+           if(isset($_POST['submit'])){
                 if(isset($_POST['user']) && isset($_POST['pass'])){
                     function validate($data){
                         $data = trim($data);
@@ -22,13 +23,14 @@
                     else{
                        $sql = "SELECT USER_NAME, PASS_WORD FROM useraccount WHERE USER_NAME='$user' AND PASS_WORD='$pass'";
                         $result = mysqli_query($con,$sql);
+                        $sql2 ="SELECT LIB_PASS_WORD FROM new_library WHERE LIB_PASS_WORD='$pass'";
                         
                        if(mysqli_num_rows($result) === 1){
                             $row = mysqli_fetch_array($result);
                             if($row['USER_NAME' === $user && $row['PASS_WORD'] === $pass]){
                                 $_SESSION['username'] = $_POST['user'];
                                 
-                                header('Location: Myshelfpage.php');
+                                header('Location: Mainpage.php');
                                 
                                 
                             //     if (isset($_SESSION['username'])) {
@@ -54,5 +56,12 @@
                 else{
                     header("Location: loginpage.php");
                     exit();
+                }
+            }
+                elseif(isset($_POST['login'])){
+                    header('Location:newBook.php');
+                }
+                else{
+                    header('Location:homepage.php');
                 }
             ?>

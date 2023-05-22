@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="loginpage.css">
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="homepages.css">
     <script src="include.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
@@ -19,23 +19,56 @@
             <h1>Which Library are you looking for</h1>
             <p>Explore the world's Knowledge</p>               
             <button id="premium" onclick="premiumpage.php">Go Premium</button>
-            <label>
-                <center><select name="country" id="country">
-                            <option value="">Search By Country</option>
-                            <option value="Algeria">Algeria</option>
-                            <option value="Botswana">Botswana</option>
-                            <option value="Burundi">Burundi</option>
-                            <option value="Chad">Chad</option>
-                            <option value="Ethiopia">Ethiopia</option>
-                            <option value="Egypt">Egypt</option>
-                            <option value="Ghana">Ghana</option>
-                            <option value="Nigeria">Nigeria</option>
-                            <option value="South Africa">South Africa</option>
-                            <option value="Zimbabwe">Zimbabwe</option>
-                        </select> 
-                    </center> 
-                </label>
-            <img src="pic.png" alt="">
+          
+            <!-- populates  drop down from the data coz we dont accept additional country-->
+                <?php
+                session_start();
+                require"connect.php";
+                $sql = "SELECT * FROM country";
+               // $country_name = $_POST['COUNTRY_NAME']
+                $result = mysqli_query($con, $sql);
+
+                echo "<form method='post' action=''>";
+                echo "<select name='country_dropdown'>";
+                echo "<option value=''>Search By Country</option>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<option value='" . $row['COUNTRY_NAME'] . "'>" . $row['COUNTRY_NAME'] . "</option>";
+                }
+                echo "</select>";
+                echo " <button id='search'type='submit' name='submit'><img id='img1' src='images/search.jpg'alt=''></button>";
+                echo "</form>";
+
+                if(isset($_POST['submit'])){
+                    $selectedOption = $_POST['country_dropdown'];
+                    if(!empty($selectedOption)) {
+                        $_SESSION['COUNTRY_NAME'] = $_POST['country_dropdown'];
+                        header("Location:loginPage.php");                       
+                    } else {
+                        header("Location:newBook.php");
+                    }
+                }
+                
+                // $sql = "SELECT COUNTRY_NAME FROM country";
+                // $result = mysqli_query($con, $sql);
+
+                // echo "<select name='country_dropdown'>";
+                // echo  "<option value=''>Search By Country</option>";
+                // while ($row = mysqli_fetch_assoc($result)) {
+                //     echo "<option value='" . $row['COUNTRY_NAME'] . "'>" . $row['COUNTRY_NAME'] . "</option>";
+                // }
+                //   echo "</select>";
+                // // mysqli_close($con);
+                // if(isset($_POST['country_dropdown'])){
+                //     header("Location:MainPage.php");
+                //     // $selectedOption = $_POST['country_dropdown'];
+                //     // echo "the selected opyion is:" .$selectedOption;
+                // }
+
+                // else{
+                //     header("Location:newBook.php");
+                // }
+                ?>
+            <img id="img2" src="pic.png" alt="">
         </section>
         <section class="description" id="blog">
             <h2>An Outstanding website for all people around Africa</h2>
