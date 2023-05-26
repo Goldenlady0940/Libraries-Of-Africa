@@ -15,53 +15,63 @@
         <include src="header.php"></include>
         <section class="account">
             <form action="prem.php" method="POST">
-                <h1>Create New Account</h1>
+            <h1>Create New Account</h1>
                 
-                    <label for="fname">First Name</label>
-                    <input type="text" name="fname" id="fname">
+                <!-- <label for="fname">First Name</label> -->
+                <input type="text" name="fname" id="fname" placeholder="Name">
 
-                    <label for="lname">Last Name</label>
-                    <input type="text" name="lname" id="lname"><br><br>
+                <!-- <label for="lname">Last Name</label> -->
+                <input type="text" name="lname" id="lname" placeholder="Last name"><br><br>
 
-                    <label for="gender">Gender:</label>
-                    <input type="radio" name="gender" id ="gender" value="male">
-                    <label for="male">Male</label>
-                    <input type="radio" name="gender" id ="gender" value="female">
-                    <label for="female">Female</label><br><br>
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" id ="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id ="gender" value="female">
+                <label for="female">Female</label><br><br>
 
-                    <label for="phone">Phone</label>
-                    <input class="phone" type="tel" name="phone" id="phone">
+                <!-- <label for="phone">Phone</label> -->
+                <input class="phone" type="tel" name="phone" id="phone" placeholder="Contact Number">
 
-                    <label for="email">Email</label>
-                    <input  class="email" type="email" name="email" id="email"><br><br>
+                <!-- <label for="email">Email</label> -->
+                <input  class="email" type="email" name="email" id="email" placeholder="Email Address"><br><br>
 
-                    <label for="country">Country</label>
-                    <input class="country" type="text" name="country" id="country">
-                    <label for="city">City</label>
-                    <input class="city" type="text" name="city" id="city" ><br><br>
-                    <label for="region">Region</label>
-                    <input class="region" type="text" name="region" id="region">
+                <!-- <label for="country">Country</label> -->
+                <input class="country" type="text" name="country" id="country" placeholder="Country">
+                <!-- <label for="city">City</label> -->
+                <input class="city" type="text" name="city" id="city" placeholder="City" ><br><br>
+                <!-- <label for="region">Region</label> -->
+                <input class="region" type="text" name="region" id="region" placeholder="Region">
 
-                    <label for="id">National Id</label>
-                    <input type="text" class="id" name="nid" id="id"><br><br>
+                <!-- <label for="id">National Id</label> -->
+                <input type="text" class="id" name="nid" id="id" placeholder="National Id"><br><br>
 
-                    <label for="user">UserName</label>
-                    <input class="usp" type="text" name="user" id="us">
-                    
-                    <label for="pass">Password</label>
-                    <input class="usp" type="password" name="pass" id="psw">
+                <!-- <label for="user">UserName</label> -->
+                <input class="usp" type="text" name="user" id="us" placeholder="Username">
+                
+                <!-- <label for="pass">Password</label> -->
+                <input class="usp" type="password" name="pass" id="psw" placeholder="Password">
 
-                    <h3>Mode Of payment</h3>
-                    <p>chapa payment system</p>
+                <h3>Mode Of payment</h3>
+                <p>chapa payment system</p>
 
-                    <button type="submit" class="finish">Submit</button>
+                <button type="submit" class="finish">Sign Up</button>
+        
+            </form>
             
-                </form>
-                
-        </section>
-    </div>
-    <footer class="foot">
-        <include src="footer.php"></include>
-    </footer>
+    </section>
+</div>
+<footer class="foot">
+    <include src="footer.php"></include>
+</footer>
+<script>
+  function toggleMenu(){
+    const menuToggle=document.querySelector('.toggle');
+    const navigation=document.querySelector('#menuList');
+    menuToggle.classList.toggle('active');
+   navigation.classList.toggle('active');
+//    e.preventDefault();
+
+   }
+</script>
 </body>
 </html>

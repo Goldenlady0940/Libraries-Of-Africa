@@ -1,0 +1,22 @@
+.add-book{
+        /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-image: linear-gradient(white,rgb(231, 180, 84));
+    /* background-image: url("lib.jpg"); */
+}
+form{
+    box-shadow: 10px 10px 15px 15px  black;
+    width: 700px;
+    padding: 30px;
+    border-radius: 15px;
+   background-image: linear-gradient(rgb(231, 180, 84),silver);
+    border: red 1px solid;
+   background-color: whitesmoke;
+
+  }
+  input{
+background-color: transparent;
+  }

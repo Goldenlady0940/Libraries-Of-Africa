@@ -147,6 +147,14 @@
 </body>
 </html>
 <script>
+     function toggleMenu(){
+        const menuToggle=document.querySelector('.toggle');
+        const navigation=document.querySelector('#menuList');
+        menuToggle.classList.toggle('active');
+       navigation.classList.toggle('active');
+    //    e.preventDefault();
+
+       }
     $(document).ready(function(){
         $('#premium').on('click', function(){
             premiumpage.php;

@@ -40,5 +40,15 @@
         <footer class="foot">
             <include src="footer.php"></include> 
         </footer>
+        <script>
+      function toggleMenu(){
+        const menuToggle=document.querySelector('.toggle');
+        const navigation=document.querySelector('#menuList');
+        menuToggle.classList.toggle('active');
+       navigation.classList.toggle('active');
+    //    e.preventDefault();
+
+       }
+    </script>
 </body>
 </html>

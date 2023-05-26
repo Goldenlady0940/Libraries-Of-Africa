@@ -1,3 +1,6 @@
+/* *{
+    border: 2px solid green;
+} */
 .header
 {
     flex-grow: 1;
@@ -6,18 +9,22 @@
     align-items: center;
     padding: 10px;
     justify-content: space-between;
+    border-bottom: 5px solid #ffbf23;
 }
 .header .logo{
     width:30%;
+    /* border: 1px red solid;  */
 }
 .header .logo img
 {
+    /* border: 1px red solid;  */
     flex-grow: 1;
     border-radius: 50px;
     width: 15%;
 }
 .header .logo p
 {
+    /* border: 1px red solid;  */
     position: absolute;
     left: 8%;
     top: 2%;
@@ -31,7 +38,7 @@
     display: flex;
     flex-direction: column;
     background-color:white;
-    border: 1px red solid;
+    /* border: 1px red solid; */
     padding-left: 60px;
 }
 .menu ul{
@@ -42,29 +49,42 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    padding: 10px;
-    gap: 80px;
-    border: red 1px solid;
+   
+    padding: 20px;
+    gap: 50px;
+    /* border: red 1px solid; */
+   
     
 }
 .menu ul li{
+    
+    /* border: red 1px solid; */
     list-style: none;
+    /* width: 11%; */
+    left: 90%;
 }
 .menu ul li a 
 {
+    margin-left: 0%;
     color: black;
     text-decoration: none;
-    border: 1px red solid;
+    /* border: 1px red solid; */
     text-transform: uppercase;
     font-size: 15px;
 }
+#cont{
+    width: 15%;
+}
+.menu ul li a:hover{
+    font-size: large;
+}
 .menu ul li button{
-    border: 1px red solid;
+    /* border: 1px red solid; */
     position: absolute;
     width: 20%;
     height: 70%;
-    top: 10%;
-    left: 80%;
+    top: 12%;
+    left: 75%;
     background-color: #ffbf23;
     border-radius: 10px;
     font-size: 16px;
@@ -79,3 +99,194 @@
     text-decoration-thickness: 2px;
    
 }
+.nav{
+    display: none;
+    /* width: 10%;
+    height: 10%;
+    right: 0%; */
+} 
+
+
+
+@media only screen and (max-width:480px){
+    header #menuList{
+        display: none;
+    }
+    .header .logo{
+        width:100%;
+        /* border: red solid 2px; */
+      
+    }
+    .header .logo img
+    {
+        flex-grow: 1;
+        border-radius: 50px;
+        width: 30%;
+       
+    }
+    header .logo p{
+        position: relative;
+        left: 8%;
+        top: 2%;
+        font-size: 10px;
+        font-weight: 100;
+        font-family: cursive;
+        display: none;
+        
+      
+    }
+    /* .menu ul li{
+    
+      
+        list-style: none;
+        width: 11%;
+        left: 90%;
+    } */
+    #cont{
+        width: 15%;
+    }
+  
+    .toggle{
+        position: relative;
+        /* border: red solid 2px; */
+        width:50px;
+        height: 50px;
+        background:url(menu-bar.png);
+        background-size: 50px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        z-index: 10000;
+    }
+    .toggle.active{
+        /* position: fixed; */
+        background:url(close.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    header #menuList.active{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffbf23;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+
+    }
+    .menu ul li button{
+        /* border: 1px red solid; */
+        position: relative;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        align-items: center;
+
+        left: 0%;
+        background-color: #ffbf23;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+    .menu ul li a 
+{
+    color: black;
+    text-decoration: none;
+    /* border: 1px red solid; */
+    text-transform: uppercase;
+    font-size: 1.4em;
+    font-weight: 300;
+}
+    }
+
+    @media only screen and (min-width:480px) and (max-width:960px){
+        header #menuList{
+            display: none;
+        }
+        .header .logo{
+            width:100%;
+            justify-content: space-between;
+            /* border: red solid 2px; */
+          
+        }
+        .header .logo img
+        {
+            margin-left: 5%;
+            flex-grow: 1;
+            border-radius: 50px;
+            width: 15%;
+           
+        }
+        header .logo p{
+            position: relative;
+            margin-left:15%;
+            left: 90%;
+            top: 2%;
+            font-size: 50px;
+            font-weight: 400;
+            font-family: cursive;
+            
+            
+          
+        }
+      
+        .toggle{
+            position: relative;
+            /* border: red solid 2px; */
+            width:50px;
+            height: 50px;
+            background:url(menu-bar.png);
+            background-size: 50px;
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+            z-index: 10000;
+        }
+        .toggle.active{
+            /* position: fixed; */
+            background:url(close.png);
+            background-size: 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        header #menuList.active{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffbf23;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+    
+        }
+        .menu ul li button{
+            /* border: 1px red solid; */
+            position: relative;
+            width: 100%;
+            height: 100%;
+            top: 0%;
+            align-items: center;
+    
+            left: 0%;
+            background-color: #ffbf23;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        .menu ul li a 
+    {
+        color: black;
+        text-decoration: none;
+        /* border: 1px red solid; */
+        text-transform: uppercase;
+        font-size: 1.4em;
+        font-weight: 300;
+    }
+    }

@@ -1,9 +1,24 @@
 .forget{
-    height: 50vh;
+    height: 90vh;
     text-align: center;
-    margin-top: 10%;
-    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger; 
+    border-radius: 15px;
+    background-image: url(book1.JPG);
+    background-size: cover;
     
+}
+form{
+    box-shadow: 10px 10px 15px 15px  black;
+    width: 500px;
+    padding: 30px;
+    margin-left: 20%;
+   border-radius: 15px;
+   background-image: linear-gradient(rgb(231, 180, 84),silver);
+   border: white 2px solid;
+   background-color: whitesmoke;
 }
 .forget input{
     width: 13rem;
@@ -14,4 +29,18 @@
     width:100px;
     border-radius: 20px;
    
+}
+
+@media only screen and (max-width:480px){
+    .forget{
+        height: 70vh;
+        text-align: center;
+        /* margin-top: 25%; */
+        font-size: larger;
+        
+    } 
+    form{
+        margin-left: 7%;
+        margin-right: 5%;
+    }
 }

@@ -1,15 +1,17 @@
 *
 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     box-sizing: border-box;
 }
 
 .login{
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("lib.jpg");
+    background-image: url("book1.jpg");
+    background-size: cover;
    border: red 1px solid;
     
 }
@@ -19,7 +21,8 @@ form{
     padding: 30px;
     word-spacing: 10px;
    border-radius: 15px;
-   border: red 1px solid;
+   margin-left: 20%;
+   border: white 2px solid;
 }
 input{
     display: block;
@@ -30,13 +33,18 @@ input{
     border-radius: 5px;
 }
 label{
-    font-size: 18px;
+    font-size: 20px;
+    
     padding: 10px;
-    color: white;
+    color: grey;
 }
 a{
     color: black;
-    font-size: 1.1rem;
+    margin-left: 5%;
+    font-size: 0.9rem;
+}
+a:hover{
+    color:rgb(0, 64, 255);
 }
 button{
     float: right;
@@ -44,7 +52,7 @@ button{
     font-size: large;
     border-radius: 10px;
     margin-right: 10px;
-    background-color: #e7b69b;
+    background-color: #ffbf23;
 }
 .error{
     background-color: #F2DEDE;
@@ -52,6 +60,40 @@ button{
     padding: 10px;
     width: 95%;
     border-radius: 5px;
+}
+
+@media only screen and (max-width:480px){
+    .login{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url("book1.jpg");
+        /* background-size: cover; */
+       border: red 1px solid;
+        
+    }
+    form{
+        box-shadow: 10px 10px 5px black;
+        width: 300px;
+        padding: 30px;
+        word-spacing: 10px;
+       border-radius: 15px;
+       margin-left: 3%;
+       border: white 2px solid;
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:960px){
+    form{
+        box-shadow: 10px 10px 5px black;
+        width: 400px;
+        padding: 30px;
+        word-spacing: 10px;
+       border-radius: 15px;
+       margin-left: 20%;
+       border: white 2px solid;
+    }
 }
 /* 
 .login .form .psw{
