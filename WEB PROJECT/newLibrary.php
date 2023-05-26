@@ -84,7 +84,7 @@
             
                                  // Check if the query was executed successfully
                                 if ($result2) {
-                                    $_SESSION['LIBRARY_NAME'] =$_POST['name'];
+                                   // $_SESSION['LIBRARY_NAME'] =$_POST['name'];
                                     //if(isset($_SESSION['LIBRARY_NAME'] )){ ya it works
                                     header("Location: location.php");
                                     exit();

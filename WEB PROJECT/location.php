@@ -30,10 +30,10 @@
     <img src="images/gnanalib1.jpg" width="100px" height="100px" alt="">
 </div>
 <section class="list">
-    <h2>Algeria</h2>
-    <a href="https://en.wikipedia.org/wiki/National_Library_of_Algeria">National Library of Algeria</a>
-    <!-- <h1>List of countries with their respective libraries</h1> -->
-    <!-- <table width="1350px" >
+    <!-- <h2>Algeria</h2>
+    <a href="https://en.wikipedia.org/wiki/National_Library_of_Algeria">National Library of Algeria</a> -->
+    <h1>List of countries with their respective libraries</h1> 
+     <table width="1350px" >
         <tr align="center">
             <td>
                 <dl>  <dt></dt>
@@ -61,7 +61,7 @@
                 </dl>
             </td>
         </tr>
-    </table> -->
+    </table>
 </section>
 </body>
 </html>

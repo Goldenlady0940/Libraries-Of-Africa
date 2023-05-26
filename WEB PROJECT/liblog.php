@@ -22,7 +22,7 @@
                }?>
                <!--password-->
                <label for="pass">Password</label>
-               <input type="password" name="pass" placeholder="Enter your password">
+               <input type="password" name="libpass" placeholder="Enter your password">
 
                <button type="login" name="login"> LOGIN</button>
                

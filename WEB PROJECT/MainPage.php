@@ -28,9 +28,16 @@
             width: 200px;
             height: 100px;
         }
-        button{
+        /* button{
             background-color: bisque;
            margin-left: 150px;
+        } */
+        #shelf{
+            background-color: bisque;
+           margin-left: 7rem;
+           width: 10rem;
+           height: 2rem;
+           
         }
     </style>
     <!-- <script>
@@ -46,7 +53,7 @@
 <body>
 <div>
    
-     <button type= 'submit' name='shelf'  onclick="location.href='MyshelfPage.php'">Myshelf</button>
+     <button type= 'submit' name='shelf' id="shelf" onclick="location.href='MyshelfPage.php'">Myshelf</button>
     <?php
      session_start();
      require"connect.php";
@@ -74,9 +81,8 @@
         $sql = "SELECT * FROM new_book
                 JOIN new_library ON new_book.BOOK_FKID = new_library.LIB_ID
                 JOIN book_genres ON new_book.BOOK_GENRE_FKID = book_genres.GENRE_ID
-                WHERE book_genres.GENRE_NAME IN ('SCIENTIFIC BOOKS') AND new_library.NAME IN  ('{$_SESSION['LIBRARY_NAME']}')-- needs correction only in the last library it doesnt consider others mtsm
-                -- GROUP BY new_library.NAME
-                ";
+                WHERE book_genres.GENRE_NAME IN ('SCIENTIFIC BOOKS');";
+                
                       
         $result = mysqli_query($con, $sql);
 // use it sra stfechi to prevent ssql injection attack
@@ -113,21 +119,31 @@
       if (!$result || !$result2 || !$result3|| !$result4) {
         printf("Error: %s\n", mysqli_error($conn));
         exit();
-    } else{
-       
+    } 
+    else{
+        
+        
             echo "<h2> SCIENTIFIC BOOKS</h2>";
         echo "<div class='wrapper'>";    
             echo" <a name='one'></a>";
+           
             while ($row = mysqli_fetch_assoc($result)) {
-            
+                $_SESSION['BOOKID']= $row['BOOK_ID'];
+                if(isset( $_SESSION['BOOKID'])){
+                    echo"{$_SESSION['BOOKID']}";
+                }
+                echo "<form method='post'>";
             echo "<table border='1px'>";
 
             echo "<tr height='250px' width='300px'>";
             echo "<td>". $row["COVER"] . "</td>";
             echo "</tr>";
 
+            // echo "<tr>";
+            // echo "<td class='pdf'>". $row["PDF"] . "</td>";
+            // echo "</tr>";
             echo "<tr>";
-            echo "<td class='pdf'>". $row["PDF"] . "</td>";
+            echo "<td><button name='dwn_pdf'>pdf</button></td>";
             echo "</tr>";
 
             echo "<tr>";
@@ -138,12 +154,44 @@
             echo "</tr>";
 
             echo "<tr>";
-            echo "<td><button>Request</button></td>";
+            echo "<td><button type='submit' name='book_req1'>Request</button></td>";
             echo "</tr>";
 
             echo "</table>"; 
+            
+        echo "</form>";
            }
+         //  echo "<td><button type='submit' name='book_req1'>Request</button></td>";
         echo "</div>";
+                
+        if(isset($_POST['dwn_pdf'])){
+       
+
+
+          
+        $sql5 = "SELECT * FROM new_book WHERE BOOK_ID = {$_SESSION['BOOKID']}";
+        $result5 = mysqli_query($con, $sql5);
+        $row = mysqli_fetch_assoc($result5);
+        $pdf_contents = $row['PDF'];
+
+        // Set the appropriate headers for a PDF file
+        header('Content-type: application/pdf');//describe nature and formate of the file 
+        header("Content-Disposition: attachment; filename=\"$pdf_contents\"");// is it displayed inline or downloaded as attachment?
+
+
+        // Output the PDF contents to the browser
+        echo $pdf_contents;
+
+
+        }
+        if(isset($_POST['book_req1'])){
+       header('Location:RequestPage.php');
+    }
+    else{
+
+      echo"hello";
+        
+    }
 
           echo "<h2> BIOGRAPHY BOOKS</h2>";
         echo "<div class='wrapper'>";  
@@ -166,7 +214,7 @@
                 echo "</tr>";
 
                 echo "<tr>";
-                echo "<td><button>Request</button></td>";
+                echo "<td><button name='book_req'>Request</button></td>";
                 echo "</tr>";
 
                 echo "</table>"; 
@@ -195,21 +243,20 @@
                 echo "</tr>";
 
                 echo "<tr>";
-                echo "<td><button>Request</button></td>";
+                echo "<td><button name='book_req'>Request</button></td>";
                 echo "</tr>";
 
                 echo "</table>"; 
             }
         echo "</div>";
-    }
+   
+        }
+             
+            ?>
 
-    
-          
-            ?>
-    <?php
-            
-                      
-            ?>
+            <?php
+    ?>
+   
     <!-- <table height="700px" width="1350px" border="1px">
         <tr>
             <td></td>

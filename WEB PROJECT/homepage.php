@@ -18,7 +18,7 @@
         <section class="main">
             <h1>Which Library are you looking for</h1>
             <p>Explore the world's Knowledge</p>               
-            <button id="premium" onclick="premiumpage.php">Go Premium</button>
+            <button id="premium"   onclick="location.href='premiumpage.php'">Go Premium</button>
           
             <!-- populates  drop down from the data coz we dont accept additional country-->
                 <?php

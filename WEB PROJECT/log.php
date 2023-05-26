@@ -23,7 +23,7 @@
                     else{
                        $sql = "SELECT USER_NAME, PASS_WORD FROM useraccount WHERE USER_NAME='$user' AND PASS_WORD='$pass'";
                         $result = mysqli_query($con,$sql);
-                        $sql2 ="SELECT LIB_PASS_WORD FROM new_library WHERE LIB_PASS_WORD='$pass'";
+                        
                         
                        if(mysqli_num_rows($result) === 1){
                             $row = mysqli_fetch_array($result);
@@ -59,7 +59,20 @@
                 }
             }
                 elseif(isset($_POST['login'])){
-                    header('Location:newBook.php');
+                    if(isset($_POST['libpass'])){
+                        $libpass=$_POST['libpass'];
+                        $sql2 ="SELECT * FROM new_library WHERE LIB_PASS_WORD='$libpass'";
+                        $result2 = mysqli_query($con,$sql2);
+                        
+                        if(mysqli_num_rows($result2) === 1){
+                             $row = mysqli_fetch_array($result2);
+                             if($row['LIB_PASS_WORD'] === $libpass){
+                                $_SESSION['LIB_NAME'] =$row['NAME'];
+                                $_SESSION['LIBID'] =$row['LIB_ID'];
+                            header('Location:newBook.php');
+                             }
+                        }
+                     }
                 }
                 else{
                     header('Location:homepage.php');
