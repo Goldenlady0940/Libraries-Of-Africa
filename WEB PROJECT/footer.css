@@ -24,18 +24,31 @@
     width: 30px;
     border-radius: 50%; 
  }
+ .twit:hover{
+    width: 40px;
+ }
  .ig{
     width: 30px;
     border-radius: 50%; 
+ }
+ .ig:hover{
+    width: 40px;
  }
  .mail{
     width: 30px;
     border-radius: 50%; 
  }
+ .mail:hover{
+    width: 40px;
+ }
  .ln{
     width: 30px;
     border-radius: 50%; 
  }
+ .ln:hover{
+    width: 40px;
+ }
+
 
  @media(max-width:480px){
     .footer .lastlogo img{

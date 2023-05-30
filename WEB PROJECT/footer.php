@@ -29,6 +29,7 @@
     <a href="mailto:yasminip30@gmail.com" ><img src="linkedin.png" class="ln"></a><br>  
     
     <p>@2023 by Libraries Of Africa</p>
+    <div><button style="background-color:grey" onclick="location.href='admin.php'">Admin Login</button></div>
     </div>
         
 </body>

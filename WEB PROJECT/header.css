@@ -19,6 +19,7 @@
 {
     /* border: 1px red solid;  */
     flex-grow: 1;
+    margin-left: 7%;
     border-radius: 50px;
     width: 15%;
 }
@@ -27,8 +28,8 @@
     /* border: 1px red solid;  */
     position: absolute;
     left: 8%;
-    top: 2%;
-    font-size: 28px;
+    top: 4%;
+    font-size: 24px;
     font-weight: 900;
     font-family: cursive;
 }
@@ -215,7 +216,7 @@
         }
         .header .logo img
         {
-            margin-left: 5%;
+            margin-left: 8%;
             flex-grow: 1;
             border-radius: 50px;
             width: 15%;
@@ -224,8 +225,8 @@
         header .logo p{
             position: relative;
             margin-left:15%;
-            left: 90%;
-            top: 2%;
+            left: 10%;
+            top: 1%;
             font-size: 50px;
             font-weight: 400;
             font-family: cursive;

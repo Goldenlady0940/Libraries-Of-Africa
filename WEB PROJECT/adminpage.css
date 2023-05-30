@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    /* background-color: rgb(240, 236, 236); */
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url(book2.jpg),center;
+    background-size: cover;
+    /* justify-content: center;
+    align-items: center; */
+}
+.data{
+    display: flex;
+    flex-wrap: wrap;
+}
+.analytics{
+    color: #fff;
+    background-color:rgba(184, 51, 51, 0.623) ;
+}
+.analytics h2{
+    margin-left: 2%;
+}
+.income{
+    background:linear-gradient(rgb(167, 149, 200),#fff);
+    box-shadow: 3px 3px 3px 3px black;
+    width: 40vh;
+    height: 20vh;
+    margin-top: 4%;
+    margin-left: 8%;
+    margin-bottom: 4%;  
+   
+}
+.income img{
+    width: 45%;
+    height: 45%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+.income h2{
+   padding-top: 10%;
+   padding-left: 5%;
+}
+.user{
+    background:linear-gradient(rgb(157, 217, 157),#fff);
+    box-shadow: 3px 3px 3px 3px black;
+    width: 40vh;
+    height: 20vh;
+    margin-top: 4%;
+    margin-left: 8%;
+    margin-bottom: 4%;   
+}
+.user img{
+    width: 45%;
+    height: 45%;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+.user h2{
+    padding-top: 10%;
+    padding-left: 5%;
+ }
+ .order{
+    background:linear-gradient(rgb(255, 98, 0),#fff);
+    box-shadow: 3px 3px 3px 3px black;
+    width: 40vh;
+    height: 20vh;
+    margin-top: 4%;
+    margin-left: 8%;
+    margin-bottom: 4%;   
+}
+
+.order img{
+    width: 45%;
+    height: 45%;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+.order h2{
+   padding-top: 10%;
+   padding-left: 5%;
+}
+.bookList{
+    border-top:10px solid black ;
+    width: 60vw;
+    height: 65vh;
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+}
+.header{
+    /* margin-top: 3%; */
+    width: 100%;
+    height: 10%;
+    background-color: rgba(184, 51, 51, 0.623);
+    padding: .8rem 1rem;
+  
+}
+.table__body{
+    width: 95%;
+    max-height: 89%;
+   overflow: auto;
+    border-radius: .6rem;
+
+}
+table,th,td{
+    padding: 1.5rem;
+    border-collapse: collapse;
+}
+thead th{
+    position: sticky;
+    background-color: rgb(204, 163, 163);
+    border-bottom: 5px solid black;
+}
+tbody tr:nth-child(even){
+    background-color: rgb(170, 169, 169);
+}
+
+.customerOrder{
+    border-top:10px solid black ;
+    width: 60vw;
+    height: 70vh;
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+}
+.custInfo{
+    border-top:10px solid black ;
+    width: 75vw;
+    /* height: 70vh; */
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+}
+.libInfo{
+    border-top:10px solid black ;
+    width: 75vw;
+    /* height: 70vh; */
+    background-color: #fff5;
+    backdrop-filter: blur(7px);
+}
+
+.edit{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(184, 51, 51, 0.623);
+}
+.editpic{
+    padding-left: 10%;
+    width:25%;
+    height: 25%;
+}
+.deletepic{
+    padding-left: 10%;
+    width:25%;
+    height: 25%;
+}
+.add{
+    
+    width: 10%;
+    background-color: grey;
+    color: rgba(184, 51, 51, 0.623);
+}

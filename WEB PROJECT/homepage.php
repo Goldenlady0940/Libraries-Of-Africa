@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="loginpage.css">
     <link rel="stylesheet" href="homepages.css">
     <script src="include.js"></script>
@@ -16,7 +16,7 @@
     <div class="wrapper">
         <include src="header.php"></include>
         <section class="main">
-            <h1>Which Library are you looking for</h1>
+        <h1>Which Library<br> Are You <br>Looking For?</h1>
             <p>Explore the world's Knowledge</p>               
             <button id="premium"   onclick="location.href='premiumpage.php'">Go Premium</button>
           
@@ -71,40 +71,64 @@
             <img id="img2" src="pic.png" alt="">
         </section>
         <section class="description" id="blog">
+           <div class="desc">
             <h2>An Outstanding website for all people around Africa</h2>
             <p>  This website is dependent on a specific locale which is Africa. Information about current libraries in Africa will be provided. It's useful for everyone who wants to level up their knowledge, enjoys reading, increase their creativity, change their perspectives, and more. The website intends to solve accessibility of information about libraries specifically for self-taught people who want to discover more and could get the relevant information on where to get different resources. 
                 In many of the communities we serve, young people have little to no access to reading materials beyond textbooks (when provided). So our main goal is to provide accurate, fast access to information to our people. At this moment our library website won't be providing worldwide its Africa Limited Edition.
             </p>
+            </div>
         </section>
+        <!----------------------------------- offers--- -->
         <section class="offers">
-            <h3 style="margin-left: 50px; margin-top: 70px;">What We Offer:</h3>
-            <div class="books">
-                <img src="offerbooks.png" style="border-radius:50px" alt="">
-                <h3>Plenty of Books</h3>
-                <p>Over half a million in shelf books </p>
-            </div>
-            <div class="ship">
-                <img src="offershipping.png" style="border-radius:50px" alt="">
-                <h3>Quick Shipping</h3>
-                <p>We offer fast shipping all over<br> Africa with affordable price.</p>
-            </div>
-            <div class="map">
-                <img src="offermap.png" style="border-radius:50px" alt="">
-                <h3>Accurate Mapping</h3>
-                <p>An overview of all libraries<br> available in Africa with an <br>accurate history, location and area,<br> is available.</p>
-            </div>
-            <div class="pdf">
-                <img src="offerpdfs.png" style="border-radius:50px"alt="">
-                <h3>Pdf books</h3>
-                <p>Books in different electronic <br>formats that you can read <br>everywhere and anytime.</p>
-            </div>
-            <div class="library">
-                <h3>Library Register</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
+       
+    <div class="wrapper">
+    <h1>What We Do?</h1>
+        <div class="row">
+            <div class="col1">
+                <div class="offer">
+                    <div class="service">
+                        <div class="serviceLogo"><img src="bookic.png" alt=""></div>
+                        <h4>Plenty of Books</h4>
+                        <p>Over half a million in shelf books.
+                        </p>
+                    </div></div></div>
+            <div class="col2">
+            <div class="offer">
+                    <div class="service">
+                        <div class="serviceLogo"><img src="shipic.png" alt=""></div>
+                        <h4>Quick Shipping</h4>
+                        <p>We offer fast shipping all over Africa with affordable price.</p>
+                    </div></div></div>
+            <div class="col3">
+            <div class="offer">
+                    <div class="service">
+                        <div class="serviceLogo"><img src="mapic.png" alt=""></div>
+                        <h4>Accurate Mapping</h4>
+                        <p>An overview of all libraries 
+                        available in Africa with an accurate history, location and area, is available.</p>
+                    </div></div> </div>
+
+            <div class="col4">
+            <div class="offer">
+                    <div class="service">
+                        <div class="serviceLogo"><img src="pdfic.png" alt=""></div>
+                        <h4>Pdf Books</h4>
+                        <p>Books in different electronic formats that you can read everywhere and anytime.</p>
+                    </div></div> </div>
+            <div class="col5">  
+                 <div class="offer">
+                    <div class="service">
+                        <div class="serviceLogo"><img src="pdf2ic.png" alt=""></div>
+                        <h4>Library Register</h4>
+                        <p>Over half a million in shelf.<br> books
+                           </p>
+                    </div> </div></div> </div>
+    </div>
+           
+<!----------------------------------- offers------------>
         </section>  
         <section class="clients">
-            <h3 style="margin-left: 50px; margin-top: 70px;">What our Clients say:</h3>
+            <h2 style="margin-left: 50px; margin-top: 70px;">What our Clients say:</h2>
             <div class="one">
                 <p>"Works like a charm. I love the ease of the site and would highly recommend purchasing their monthly program to get latest book updates."</p>
                 <p>Deena Levies,<br>Mission Bay</p>
@@ -118,28 +142,68 @@
                 <p>Tilly Green,<br>Hayes Valley</p>
             </div>
         </section>
+
+<!---------------------------------- pricing-------------------->
+
         <section class="price">
-                <p style="font-size: 80px;">Explore Our <br>Pricing Options</p>
+        <div class="pricing">
+        <div class="detail">
+            <h2>Price to suit your plan</h2>
+        </div>
+        <div class="grid">
+            <div class="box free">
+                <div class="title" style="font-size:large; color: #7b6a39;">Free</div>
+                <div class="price">
+                    <b>$0</b><br>
+            </div>
+            <div class="features">
+                <div>Checking out library locations</div>
+                <div>lorem2</div>
+                <div>lorem3</div>
+                <div>lorem4</div>
+            </div>
+            <div class="button">
+                <button>Free</button>
+            </div>
+            </div>
+       
+        <div class="box ind">
+                <div class="title">Individual</div>
+            <div class="price">
+                    <b>$12</b><span>per month</span>
+            </div>
+            <div class="features">
+                <div>Shipping</div>
+                <div>Get PDFs</div>
+                <div>Borrow</div>
+                <div>lorem4</div>
+            </div>
+            <div class="button">
+                <button onclick="location.href='premiumpage.php'">Get Plan</button>
+            </div>
             
-                <div class="basic">
-                    <h1>Basic</h1>
-                    <ul>
-                        <li>Checking out library locations</li>
-                    </ul>
-                    <h3>FREE</h3>
+        </div>
+        <div class="box bus">
+                <div class="title" style="font-size:large; color: #7b6a39;">Business</div>
+                <div class="price">
+                    <b>$20</b><span>per month</span>
                 </div>
-                <div class="premium">
-                    <h1>Premium</h1>
-                    <ul>
-                        <li>Checking out library locations</li>
-                        <li>Borrow</li>
-                        <li>Get pdfs</li>
-                        <li>shipping</li>
-                    </ul>
-                    <h3>Subscribe To $11/month<h3>
-                </div>
-            
+            <div class="features">
+                <div>Register Your Library</div>
+                <div>Add your Books</div>
+                <div>lorem3</div>
+                <div>lorem4</div>
+            </div>
+            <div class="button">
+                <button onclick="location.href='newLibrary.php'">Get Plan</button>
+            </div>
+         
+        </div>
+        </div>
+         </div>
         </section>
+        <!----------------------------------- pricing-------------------->
+
     </div>
         <footer class="foot" id="contact">
             <include src="footer.php"></include>
