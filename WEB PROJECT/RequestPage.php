@@ -31,10 +31,13 @@
     <?php
     session_start();
     require"connect.php";
+    if(isset($_GET['uid'])){
+        $id= $_GET['uid'];
+    }
             $user=$_SESSION['username'];
     $sql = "SELECT *FROM useraccount WHERE USER_NAME='$user'";
-    $sql2 = "SELECT * FROM new_book WHERE BOOK_ID = {$_SESSION['BOOKID']};";
-
+    $sql2 = "SELECT * FROM new_book WHERE BOOK_ID = '$id';";
+   
     $result = mysqli_query($con, $sql);
     $result2 = mysqli_query($con, $sql2);
     if (!$result || !$result2 ) {
@@ -54,7 +57,7 @@
                     <td align="left"><img src="Images/logo1.jpg" alt=""></td>
                 </tr>
                 <tr >
-                    <td align="center"><label for="fname">Name</label></td>
+                    <td align="center"><label for="fname">Name</label></td><?php $_SESSION['USERID'] = $row['ID']?>
                     <td><input type="text" name="fname" id="fname" value="<?php echo $row['FIRST_NAME'] . " " .$row['LAST_NAME']?>"></td>
                 </tr>
                 <tr>
@@ -93,11 +96,25 @@
                 <tr>
                     <td align="center"><label for="da">Request Date</label></td>
                     <td><input type="date" name="req_date" id="da" ></td>
+                   
                 </tr>
                 <tr>
                     <td></td>
                     <td align="right"><button type="submit" name="pass_req" class="finish">Pass Request</button></td>
                 </tr>
+                <?php
+                if(isset($_POST['pass_req'])){
+                    $req_date = $_POST['req_date'];
+                    $sql3 = "INSERT INTO `request` (`USER_FKID`, `BOOK_FKID`, `REQUEST_DATE`, `PAYMENT_STATUS`) 
+                    VALUES ({$_SESSION['USERID']}, '$id', '$req_date', 'Pending'); ";
+                    $result4=mysqli_query($con,$sql3);
+                    if($result4){
+                        header("Location:chapa.php");
+                    }else{
+                        echo"invalid";
+                    }
+                }
+                    ?>
             </div>
         </table>
     </form>

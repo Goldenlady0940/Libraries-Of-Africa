@@ -38,3 +38,10 @@ input:not(#gender) {
     margin-right: 10px;
     background-color: #e7b69b;
 }
+.errors{
+    background-color: #F2DEDE;
+    color: #A94442;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+}

@@ -23,14 +23,14 @@
                Yasmin Ahmed<br>
             </p>
             
-    <a href="https://t.me/jasmine_ah" ><img src="tg.png" class="ig"></a>
-    <a href="https://twitter.com/Yasmin57116223" ><img src="twitter.png" class="twit"></a>
-    <a href="mailto:yasminip30@gmail.com"><img src="mail.png" class="mail"></a>
-    <a href="mailto:yasminip30@gmail.com" ><img src="linkedin.png" class="ln"></a><br>  
+    <a href="https://t.me/jasmine_ah" ><img src="images/tg.png" class="ig"></a>
+    <a href="https://twitter.com/Yasmin57116223" ><img src="images/twitter.png" class="twit"></a>
+    <a href="mailto:yasminip30@gmail.com"><img src="images/mail.png" class="mail"></a>
+    <a href="mailto:yasminip30@gmail.com" ><img src="images/linkedin.png" class="ln"></a><br>  
     
     <p>@2023 by Libraries Of Africa</p>
-    <div><button style="background-color:grey" onclick="location.href='admin.php'">Admin Login</button></div>
-    </div>
+    <!-- <div><button style="background-color:grey" onclick="location.href='admin.php'">Admin Login</button></div>
+    </div> -->
         
 </body>
 </html>

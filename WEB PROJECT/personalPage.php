@@ -154,10 +154,6 @@ if(isset($_POST['save'])){
     $new_lname = $_POST['lname'];
     $new_phone = $_POST['phone'];
     $new_email = $_POST['email'];
-    // $new_country = $_POST['country'];
-    //those fields arent gonna be eddited
-    // $new_city = $_POST['city'];
-    // $new_region = $_POST['region'];
     $new_user = $_POST['user'];
     $new_pass = $_POST['pass'];
 

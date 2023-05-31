@@ -15,6 +15,11 @@
         <include src="header.php"></include>
         <section class="account">
             <form action="prem.php" method="POST">
+            <?php
+                if(isset($_GET['error'])){?>
+                    <p class="error"><?php echo $_GET ['error']; ?></p>
+                    <?php
+                }?>   
             <h1>Create New Account</h1>
                 
                 <!-- <label for="fname">First Name</label> -->
@@ -46,15 +51,15 @@
                 <input type="text" class="id" name="nid" id="id" placeholder="National Id"><br><br>
 
                 <!-- <label for="user">UserName</label> -->
-                <input class="usp" type="text" name="user" id="us" placeholder="Username">
+                <input class="usp" type="text" name="user" id="us" placeholder="USERNAME">
                 
                 <!-- <label for="pass">Password</label> -->
-                <input class="usp" type="password" name="pass" id="psw" placeholder="Password">
+                <input class="usp" type="password" name="pass" id="psw" placeholder="PASSWORD">
 
                 <h3>Mode Of payment</h3>
                 <p>chapa payment system</p>
 
-                <button type="submit" class="finish">Sign Up</button>
+                <button type="submit" name="signup"class="finish">Sign Up</button>
         
             </form>
             

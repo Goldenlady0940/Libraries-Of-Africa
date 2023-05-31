@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>shelf</title>
     <link rel="stylesheet" href="myshelf.css">
+    <link rel="stylesheet" href="adminpage.css">
 
 </head>
 <body>
@@ -13,14 +14,62 @@
         <div class="wrapper">
         <aside>
        
-        <?php session_start();  echo $_SESSION['username']; ?>
+        <?php session_start();  echo $_SESSION['username']; echo $_SESSION['CUSTID']; ?>
             <h2 align="center">My Shelf</h2>
             <footer>
                 <button id="actbtn" class="footer">Account</button>
             </footer>
         </aside>
+        <div class="bookList">
+   
+        <section class="header">
+           
+        <h1>Your Order</h1>
+        </section>
+        <section class="body">
+        <table>
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Customer Id</th>
+                    <th>Book Id</th>
+                    <!-- <th>Quantity</th> -->
+                    <th>Date</th>
+                    <th>Status</th>
+                    
+                </tr>
+                </thead>
+                <tbody>
+                    <?php
+                // session_start();
+                require"connect.php";
+                $sql="SELECT * FROM request WHERE USER_FKID={$_SESSION['CUSTID']}";
+                $result=$con->query($sql);
+                if(!$result){
+                    die("Invalid query: " .mysqli::$error);
+                }
+                while($row=$result->fetch_assoc()){
+                    echo "<tr>
+                    <td>" .$row["id"]."</td>
+                    <td>".$row["USER_FKID"]."</td>
+                    <td>".$row["BOOK_FKID"]."</td>
+                    <td>".$row["REQUEST_DATE"]."</td>
+                    <td><p>".$row["PAYMENT_STATUS"]."</p></td>
+               
+                    
+                  
+                </tr>";
+            
+                }
+                    ?>
+                </tbody>
+               
+        </table>
+           
+            </section>
+            </div>
        
-       <section class="right">
+       <!-- <section class="right">
             <table border="1" class="right" cellpadding="10" 
             cellspacing="30" bgcolor="white">
                 <tr>
@@ -39,7 +88,7 @@
                     <td>book9</td>
                 </tr>
             </table>
-       </section>
+       </section> -->
     </div>
 </body>
 </html>

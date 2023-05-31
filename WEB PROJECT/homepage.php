@@ -87,7 +87,7 @@
             <div class="col1">
                 <div class="offer">
                     <div class="service">
-                        <div class="serviceLogo"><img src="bookic.png" alt=""></div>
+                        <div class="serviceLogo"><img src="images/bookic.png" alt=""></div>
                         <h4>Plenty of Books</h4>
                         <p>Over half a million in shelf books.
                         </p>
@@ -95,14 +95,14 @@
             <div class="col2">
             <div class="offer">
                     <div class="service">
-                        <div class="serviceLogo"><img src="shipic.png" alt=""></div>
+                        <div class="serviceLogo"><img src="images/shipic.png" alt=""></div>
                         <h4>Quick Shipping</h4>
                         <p>We offer fast shipping all over Africa with affordable price.</p>
                     </div></div></div>
             <div class="col3">
             <div class="offer">
                     <div class="service">
-                        <div class="serviceLogo"><img src="mapic.png" alt=""></div>
+                        <div class="serviceLogo"><img src="images/mapic.png" alt=""></div>
                         <h4>Accurate Mapping</h4>
                         <p>An overview of all libraries 
                         available in Africa with an accurate history, location and area, is available.</p>
@@ -111,14 +111,14 @@
             <div class="col4">
             <div class="offer">
                     <div class="service">
-                        <div class="serviceLogo"><img src="pdfic.png" alt=""></div>
+                        <div class="serviceLogo"><img src="images/pdfic.png" alt=""></div>
                         <h4>Pdf Books</h4>
                         <p>Books in different electronic formats that you can read everywhere and anytime.</p>
                     </div></div> </div>
             <div class="col5">  
                  <div class="offer">
                     <div class="service">
-                        <div class="serviceLogo"><img src="pdf2ic.png" alt=""></div>
+                        <div class="serviceLogo"><img src="images./pdf2ic.png" alt=""></div>
                         <h4>Library Register</h4>
                         <p>Over half a million in shelf.<br> books
                            </p>
@@ -158,9 +158,9 @@
             </div>
             <div class="features">
                 <div>Checking out library locations</div>
-                <div>lorem2</div>
-                <div>lorem3</div>
-                <div>lorem4</div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
             <div class="button">
                 <button>Free</button>
@@ -191,8 +191,8 @@
             <div class="features">
                 <div>Register Your Library</div>
                 <div>Add your Books</div>
-                <div>lorem3</div>
-                <div>lorem4</div>
+                <div></div>
+                <div></div>
             </div>
             <div class="button">
                 <button onclick="location.href='newLibrary.php'">Get Plan</button>

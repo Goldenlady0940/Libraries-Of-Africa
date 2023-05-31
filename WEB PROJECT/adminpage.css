@@ -7,7 +7,7 @@
 }
 body{
     min-height: 100vh;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     background: url(book2.jpg),center;
     background-size: cover;
@@ -86,10 +86,11 @@ body{
 }
 .bookList{
     border-top:10px solid black ;
-    width: 60vw;
+    width: 70vw;
     height: 65vh;
     background-color: #fff5;
     backdrop-filter: blur(7px);
+    margin-left: 90px;
 }
 .header{
     /* margin-top: 3%; */
@@ -109,6 +110,7 @@ body{
 table,th,td{
     padding: 1.5rem;
     border-collapse: collapse;
+    width: 70vw;
 }
 thead th{
     position: sticky;
@@ -120,11 +122,18 @@ tbody tr:nth-child(even){
 }
 
 .customerOrder{
-    border-top:10px solid black ;
+    /* border-top:10px solid black ;
     width: 60vw;
     height: 70vh;
     background-color: #fff5;
+    backdrop-filter: blur(7px); */
+
+    border-top:10px solid black ;
+    width: 70vw;
+    height: 65vh;
+    background-color: #fff5;
     backdrop-filter: blur(7px);
+    margin-left: 90px;
 }
 .custInfo{
     border-top:10px solid black ;
@@ -134,11 +143,17 @@ tbody tr:nth-child(even){
     backdrop-filter: blur(7px);
 }
 .libInfo{
-    border-top:10px solid black ;
+    /* border-top:10px solid black ;
     width: 75vw;
     /* height: 70vh; */
+    /* background-color: #fff5;
+    backdrop-filter: blur(7px);  */
+    border-top:10px solid black ;
+    width: 70vw;
+    height: 65vh;
     background-color: #fff5;
     backdrop-filter: blur(7px);
+    margin-left: 90px;
 }
 
 .edit{
@@ -161,4 +176,17 @@ tbody tr:nth-child(even){
     width: 10%;
     background-color: grey;
     color: rgba(184, 51, 51, 0.623);
+}
+aside{
+    background-color: grey;
+    width: 200px;
+    height: 100vh;
+    float: left;
+}
+button{
+    margin-top: 5px;
+    background-color: grey;
+    height: 3rem;
+    width: 200px;
+    font-size: large;
 }

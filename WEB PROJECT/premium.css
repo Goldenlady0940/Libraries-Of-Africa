@@ -84,6 +84,13 @@ select{
     background-color: transparent;
     font-family: cursive;
 }
+.errors{
+    background-color: #F2DEDE;
+    color: #A94442;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+}
 @media(max-width:480px){
     .account{
         /* border: 1px solid red; */

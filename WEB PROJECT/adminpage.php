@@ -13,22 +13,71 @@
 </head>
 <body><div class="analytics"><h2>Analytics</h2></div>
     <section class="data">
-<div class="income"><img src="income1.PNG" alt="">
+<div class="income"><img src="images/income1.PNG" alt="">
         <h2>Sales Income</h2></div>
- <div class="user"> <img src="clients.PNG" alt="">
+ <div class="user"> <img src="images/clients.PNG" alt="">
         <h2>Total Users</h2></div>
-<div class="order"><img src="order1.PNG" alt="">
+<div class="order"><img src="images/order1.PNG" alt="">
         <h2>Orders</h2></div>
         </section>
         <button class="add" onclick="location.href='add.php'">Add New +</button>
     <div class="bookList">
    
         <section class="header">
+           
+        <h1>Customer Order</h1>
+        </section>
+        <section class="body">
+        <table>
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Customer Id</th>
+                    <th>Book Id</th>
+                    <!-- <th>Quantity</th> -->
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Approval</th>
+                    
+                </tr>
+                </thead>
+                <tbody>
+                    <?php
+                session_start();
+                require"connect.php";
+                $sql="SELECT * FROM request";
+                $result=$con->query($sql);
+                if(!$result){
+                    die("Invalid query: " .mysqli::$error);
+                }
+                while($row=$result->fetch_assoc()){
+                    echo "<tr>
+                    <td>" .$row["id"]."</td>
+                    <td>".$row["USER_FKID"]."</td>
+                    <td>".$row["BOOK_FKID"]."</td>
+                    <td>".$row["REQUEST_DATE"]."</td>
+                    <td><p>".$row["PAYMENT_STATUS"]."</p></td>
+                    <td> <a href='delete.php?BOOK_FKID= " .$row["BOOK_FKID"]."'>Approve</td>
+               
+                    
+                  
+                </tr>";
+            
+                }
+                    ?>
+                </tbody>
+               
+        </table>
+           
+            </section>
+            </div>
+
+            <div class="customerOrder">
+            <section class="header">
             <h1>List Of Books</h1>
         </section>
         <section class="body">
-            
-            <table>
+        <table>
                 <thead>
                 <tr>
                     <th>Book Id</th>
@@ -42,12 +91,12 @@
                 </thead>
                 <tbody>
                     <?php
-                session_start();
+                // session_start();
                 require"connect.php";
                 $sql="SELECT * FROM bookManage";
                 $result=$con->query($sql);
                 if(!$result){
-                    die("Invalid query: " .$con->error);
+                    die("Invalid query: " .mysqli::$error);
                 }
                 while($row=$result->fetch_assoc()){
                     // $_SESSION['bookId']=$_POST['bookIdfk'];
@@ -59,7 +108,7 @@
                     <td><p>".$row["status"]."</p></td>
                     <td><strong>".$row["price"]."$</strong></td>
                     <td><a href='edit.php?bookIdfk= " .$row["bookIdfk"]."'><img src='edit.PNG' class='editpic' alt=''></a>
-                    <a href='delete.php?bookIdfk= " .$row["bookIdfk"]."'><img src='delete.PNG' class='deletepic' alt=''></a></td>
+                     <a href='delete.php?bookIdfk= " .$row["bookIdfk"]."'><img src='delete.PNG' class='deletepic' alt=''></a></td>
                 </tr>";
             
                 }
@@ -68,34 +117,13 @@
                 //     header("Location:homepage.php");
                 // }
                     ?>
-                     <script>
-                        functiom redirect()
-                </script>
+                  <script>
+                    functiom redirect()
+                  </script>
                    
                 </tbody>
             </table>
-            </section>
-            </div>
-
-            <div class="customerOrder">
-            <section class="header">
-            <h1>Customer Order</h1>
-        </section>
-        <section class="body">
-            <table>
-                <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Customer Id</th>
-                    <th>Book Id</th>
-                    <th>Quantity</th>
-                    <th>Date</th>
-                    
-                </tr>
-                </thead>
-        
-               
-        </table>
+           
             </section>
         </div>
     
@@ -120,12 +148,12 @@
                 </thead>
                 <tbody>
                     <?php
-                session_start();
+                // session_start();
                 require"connect.php";
                 $sql="SELECT * FROM useraccount";
                 $result=$con->query($sql);
                 if(!$result){
-                    die("Invalid query: " .$con->error);
+                    die("Invalid query: " .mysqli::$error);
                 }
                 while($row=$result->fetch_assoc()){
                     echo "<tr>
@@ -164,12 +192,12 @@
                 </thead>
                 <tbody>
                     <?php
-                session_start();
+                // session_start();
                 require"connect.php";
                 $sql="SELECT * FROM new_library";
                 $result=$con->query($sql);
                 if(!$result){
-                    die("Invalid query: " .$con->error);
+                    die("Invalid query: " .mysqli::$error);
                 }
                 while($row=$result->fetch_assoc()){
                     echo "<tr>

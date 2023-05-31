@@ -26,7 +26,7 @@
                 <li><a href="newLibrary.php">Library</a></li>
                 <li><a href="location.php">Location</a></li>
                 <li><a href="homepage.php#contact">Contact Us</a></li>
-                <li><button>Go Premium</button></li>
+                <li><button onclick="location.href='premiumpage.php'">Go Premium</button></li>
             </ul>
             
         </div>

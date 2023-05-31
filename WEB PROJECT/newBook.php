@@ -26,7 +26,7 @@
         //   }  
           if(isset( $_SESSION['LIB_NAME'])){
             echo "<h1>". $_SESSION['LIB_NAME']. "</h1>";
-            echo "<h1>". $_SESSION['LIBID']. "</h1>";
+            // echo "<h1>". $_SESSION['LIBID']. "</h1>";
             
           } 
             echo"<label for='name'>Name</label>";
@@ -120,42 +120,12 @@
      
        if(empty($errors)){
          echo "Files uploaded successfully:";
-         // echo "<br>";
-         // foreach($uploadedFiles as $fileName){
-         //   echo $fileName;
-         //   echo "<br>";
-        // }
+        
        }
        else{
          print_r($errors);
        }
      }
-// if(isset($_POST['submit'])){
-// $selectedOptions = $_POST['bookgenres'];
-// if(!empty($selectedOptions)) {
-//   $_SESSION ['GENRE_NAME'] = $_POST['bookgenres'];
-//   if(isset($_SESSION ['GENRE_NAME'])){
-//     $sql2="SELECT * FROM book_genres WHERE GENRE_NAME = '{$_SESSION ['GENRE_NAME']}'";
-//     $result2 = mysqli_query($con, $sql2);
-//     if($result2){
-//         while($row = mysqli_fetch_array($result2)){
-//             $_SESSION['GENREID']=$row['GENRE_ID'];
-//         }
-//     }
-// }
-
-   // $_SESSION['BOOK_GENRE'] = $_POST['book_genre'];
-// } else {
-//    echo"invalid";
-// }
-// if(isset($_POST['submit'])){
-//   $selectedOption = $_POST['country_dropdown'];
-//   if(!empty($selectedOption)) {
-//       $_SESSION['COUNTRY_NAME'] = $_POST['country_dropdown'];
-//       header("Location:loginPage.php");                       
-//   } else {
-//       header("Location:newBook.php");
-//   }
        }
 }?>
     </section>

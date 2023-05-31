@@ -40,14 +40,6 @@
            
         }
     </style>
-    <!-- <script>
-        function fun()
-        {
-            document.getElementById(req);
-        }
-        
-
-    </script> -->
     <link rel="stylesheet" href="index.cs">
 </head>
 <body>
@@ -85,34 +77,16 @@
                 
                       
         $result = mysqli_query($con, $sql);
-// use it sra stfechi to prevent ssql injection attack
-//         $sql = "SELECT *
-//         FROM new_book
-//         JOIN new_library ON new_book.BOOK_FKID = new_library.LIB_ID
-//         JOIN book_genres ON new_book.BOOK_GENRE_FKID = book_genres.GENRE_ID
-//         WHERE book_genres.GENRE_NAME IN (?) AND new_library.NAME IN (?)";
-// $stmt = mysqli_prepare($conn, $sql);
-// mysqli_stmt_bind_param($stmt, "ss", $genre, $library);
-// $genre = "SCIENTIFIC BOOKS";
-// $library = $_SESSION['LIBRARY_NAME'];
-// mysqli_stmt_execute($stmt);
-// $result = mysqli_stmt_get_result($stmt);
-// mysqli_stmt_close($stmt);
-
         $sql3 = "SELECT * FROM new_book
                 JOIN new_library ON new_book.BOOK_FKID = new_library.LIB_ID
                 JOIN book_genres ON new_book.BOOK_GENRE_FKID = book_genres.GENRE_ID
-                WHERE book_genres.GENRE_NAME IN ('BIOGRAPHY BOOKS') AND new_library.NAME IN  ('{$_SESSION['LIBRARY_NAME']}')
-                -- GROUP BY new_library.NAME
-                ";
+                WHERE book_genres.GENRE_NAME IN ('BIOGRAPHY BOOKS')";
                       
         $result3 = mysqli_query($con, $sql3);
         $sql4 = "SELECT * FROM new_book
                 JOIN new_library ON new_book.BOOK_FKID = new_library.LIB_ID
                 JOIN book_genres ON new_book.BOOK_GENRE_FKID = book_genres.GENRE_ID
-                WHERE book_genres.GENRE_NAME IN ('KIDS BOOKS') AND new_library.NAME IN  ('{$_SESSION['LIBRARY_NAME']}')
-                -- GROUP BY new_library.NAME
-                ";
+                WHERE book_genres.GENRE_NAME IN ('KIDS BOOKS')";
                       
         $result4 = mysqli_query($con, $sql4);
 
@@ -129,9 +103,6 @@
            
             while ($row = mysqli_fetch_assoc($result)) {
                 $_SESSION['BOOKID']= $row['BOOK_ID'];
-                if(isset( $_SESSION['BOOKID'])){
-                    echo"{$_SESSION['BOOKID']}";
-                }
                 echo "<form method='post'>";
             echo "<table border='1px'>";
 
@@ -139,9 +110,6 @@
             echo "<td>". $row["COVER"] . "</td>";
             echo "</tr>";
 
-            // echo "<tr>";
-            // echo "<td class='pdf'>". $row["PDF"] . "</td>";
-            // echo "</tr>";
             echo "<tr>";
             echo "<td><button name='dwn_pdf'>pdf</button></td>";
             echo "</tr>";
@@ -154,14 +122,13 @@
             echo "</tr>";
 
             echo "<tr>";
-            echo "<td><button type='submit' name='book_req1'>Request</button></td>";
+            echo "<td><a type='submit' href ='RequestPage.php?uid=".$row['BOOK_ID']."'name='book_req1'>Request</a></td>";
             echo "</tr>";
 
             echo "</table>"; 
             
         echo "</form>";
            }
-         //  echo "<td><button type='submit' name='book_req1'>Request</button></td>";
         echo "</div>";
                 
         if(isset($_POST['dwn_pdf'])){
@@ -184,9 +151,6 @@
 
 
         }
-        if(isset($_POST['book_req1'])){
-       header('Location:RequestPage.php');
-    }
     else{
 
       echo"hello";
@@ -203,9 +167,9 @@
                 echo "</tr>";
 
                 echo "<tr>";
-                echo "<td class='pdf'>". $row["PDF"] . "</td>";
+                echo "<td><button name='dwn_pdf'>pdf</button></td>";
                 echo "</tr>";
-
+    
                 echo "<tr>";
                 echo "<td>". $row["PRICE"] . "</td>";
                 echo "</tr>";
@@ -214,7 +178,7 @@
                 echo "</tr>";
 
                 echo "<tr>";
-                echo "<td><button name='book_req'>Request</button></td>";
+                echo "<td><a type='submit' href ='RequestPage.php?uid=".$row['BOOK_ID']."'name='book_req1'>Request</a></td>";
                 echo "</tr>";
 
                 echo "</table>"; 
@@ -232,8 +196,9 @@
                 echo "</tr>";
 
                 echo "<tr>";
-                echo "<td class='pdf'>". $row["PDF"] . "</td>";
-                echo "</tr>";
+            echo "<td><button name='dwn_pdf'>pdf</button></td>";
+            echo "</tr>";
+
 
                 echo "<tr>";
                 echo "<td>". $row["PRICE"] . "</td>";
@@ -243,7 +208,7 @@
                 echo "</tr>";
 
                 echo "<tr>";
-                echo "<td><button name='book_req'>Request</button></td>";
+                echo "<td><a type='submit' href ='RequestPage.php?uid=".$row['BOOK_ID']."'name='book_req1'>Request</a></td>";
                 echo "</tr>";
 
                 echo "</table>"; 
@@ -252,95 +217,7 @@
    
         }
              
-            ?>
-
-            <?php
     ?>
-   
-    <!-- <table height="700px" width="1350px" border="1px">
-        <tr>
-            <td></td>
-        </tr>
-        <tr>
-            <td colspan="4"><h2>Scientific Books</h2></td>
-        </tr colspan="4">
-        <tr>
-            <td>
-                    <tr>
-                        <tr>
-                        <td><img src="images/b1.jpg" alt=""></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $row['PRICE']?></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $row['PDF']?></td>
-                        </tr>
-                        <tr>
-                            <td><button>REQUEST</button></td>
-                        </tr>
-                </td>
-                <td>
-                    <tr>
-                        <tr>
-                        <td><img src="images/b2.jpg" alt=""></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $row['PRICE']?></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo $row['PDF']?></td>
-                        </tr>
-                        <tr>
-                            <td><button>REQUEST</button></td>
-                        </tr>
-                </td>
-                
-              
-                         <td><img src="images/b1.jpg" alt=""></td> -->
-                <!-- <td><img src="images/b2.jpg" alt=""></td> 
-                <td><img src="images/b3.jpg" alt=""></td>
-                <td><img src="images/b4.jpg" alt=""></td>
-            </tr>
-        </tr>
-            <tr>
-                <td colspan="4"><h2>Biography Books</h2></td>
-            </tr>
-        
-            <tr>
-                <td><img src="Images/sc1.jpg" alt=""></td>
-                <td><img src="Images/sc2.jpg" alt=""></td>
-                <td><img src="Images/sc3.jpg" alt=""></td>
-                <td><img src="Images/sc4.jpg" alt=""></td>
-            </tr>
-            <tr>
-                <td colspan="4"><h2>Kids Books</h2></td>
-            </tr>
-        
-            <tr>
-                <td><img src="Images/k1.jpg" alt=""></td>
-                <td><img src="Images/k2.jpg" alt=""></td>
-                <td><img src="Images/k3.jpg" alt=""></td>
-                <td><img src="Images/k4.jpg" alt=""></td>
-            </tr>
-            <div class="finishes">
-                <tr>
-                    <td></td><td></td><td></td>
-                    <td align="right"><a id="req" href="RequestPage.html"><button class="finish" onclick="fun()">Request Book</button></a></td>
-                        
-                </tr>
-               </div>
-        
-                </section>
-            </div>
-    </table> -->
-<!-- <?php
-    //     }
-    // }
-    // else{
-    //     header("Location:loginPage.php");
-    // }
-    ?> -->
 </div>
 </body>
 </html>

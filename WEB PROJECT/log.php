@@ -1,4 +1,4 @@
-            <?php
+<?php
             session_start();
            require"connect.php";
            if(isset($_POST['submit'])){
@@ -21,22 +21,19 @@
                     exit();
                     }
                     else{
-                       $sql = "SELECT USER_NAME, PASS_WORD FROM useraccount WHERE USER_NAME='$user' AND PASS_WORD='$pass'";
+                       $sql = "SELECT * FROM useraccount WHERE USER_NAME='$user' AND PASS_WORD='$pass'";
+                       $sql3 = "SELECT Username, Pass_word FROM staff WHERE Username= '$user' AND Pass_word='$pass'";
                         $result = mysqli_query($con,$sql);
-                        
+                        $result3 = mysqli_query($con, $sql3);
                         
                        if(mysqli_num_rows($result) === 1){
                             $row = mysqli_fetch_array($result);
                             if($row['USER_NAME' === $user && $row['PASS_WORD'] === $pass]){
                                 $_SESSION['username'] = $_POST['user'];
-                                
+                                $_SESSION['fname'] =$row['FIRST_NAME'];
+                                $_SESSION['lname'] =$row['LAST_NAME'];
+                                $_SESSION['CUSTID']=$row['ID'];
                                 header('Location: Mainpage.php');
-                                
-                                
-                            //     if (isset($_SESSION['username'])) {
-                            //         //header("Location:personalpage.php");
-                            //         $sql ="SELECT * FROM useraccount WHERE USER_NAME =";
-                            //         $res = mysqli_connect($con, $sql);
                               } 
                             else {
                                  // Redirect to the login page if the user is not logged in
@@ -44,7 +41,10 @@
                                  exit();
                              }
                               
-                        }                        
+                        }  
+                        elseif(mysqli_num_rows($result3) === 1){ 
+                            header("Location: CustomerOrders.php");
+                        }              
                         else 
                         {
                             header("Location: loginpage.php?error=Authentication error");
@@ -64,7 +64,7 @@
                         $sql2 ="SELECT * FROM new_library WHERE LIB_PASS_WORD='$libpass'";
                         $result2 = mysqli_query($con,$sql2);
                         
-                        if(mysqli_num_rows($result2) === 1){
+                            if($result2){
                              $row = mysqli_fetch_array($result2);
                              if($row['LIB_PASS_WORD'] === $libpass){
                                 $_SESSION['LIB_NAME'] =$row['NAME'];

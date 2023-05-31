@@ -40,16 +40,24 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<option value='" . $row['COUNTRY_NAME'] . "'>" . $row['COUNTRY_NAME'] . "</option>";
             }
-           
+            
             echo "</select><br><br>";
                 echo"<label for='link'>Wiki link</label>";
                 echo"<input class='link' type='text' name='link' id='link'><br><br>";
                 
                 echo" <label for='pass'>Password</label>";
                 echo"<input class='usp' type='password' name='pass' id='psw' value='{$_SESSION['RAND_PASSWORD']}' disabled><br><br>";
-                echo "<i class='far fa-eye' id='togglePassword' style='margin-left: -30px; cursor: pointer; color: black;'></i>";
-                echo "<p>Please dont forget this password!<p>";
-
+                echo"<input type='checkbox' onclick='myFunction()'>Show Password ";
+                echo"<script>function myFunction() {
+                    var x = document.getElementById('psw');
+                    if (x.type === 'password') {
+                      x.type = 'text';
+                    } else {
+                      x.type = 'password';
+                    }
+                  }
+                  </script>";
+                  echo "<p>Please dont forget this password!<p>";
             // echo " <button id='search'type='submit' name='submit'><img id='img1' src='images/search.jpg'alt=''></button>";
             echo"<button type='submit' name='login' class='finish'>Login</button>";
             echo"<button type='submit' name='submit' class='finish'>Submit</button>";
@@ -78,15 +86,14 @@
                             //if the selected country matches with the one in the database take the id of that country and use for reference
                             if($row['COUNTRY_NAME'] == $_SESSION['COUNTRY_NAME_NEW']){
                                 $id = $row['COUNTRY_ID'];
-                                $sql2="INSERT INTO `new_library` (`NAME`, `LOCATION`, `WIKI_LINK`, `LIB_PASS_WORD`,`colib_ID`) 
-                                VALUES ('$libname', '$country', '$link', '$pass','$id');";
-                                $result2= mysqli_query($con,$sql2);
+                                $sql3="CALL insertLibrary('$libname', '$country', '$link', '$pass','$id')";
+                                $result2= mysqli_query($con,$sql3);
             
                                  // Check if the query was executed successfully
                                 if ($result2) {
                                    // $_SESSION['LIBRARY_NAME'] =$_POST['name'];
                                     //if(isset($_SESSION['LIBRARY_NAME'] )){ ya it works
-                                    header("Location: location.php");
+                                    header("Location: newBook.php");
                                     exit();
                                    // }
                                     
@@ -128,4 +135,3 @@
     </script>
 </body>
 </html>
-<script src="lib.js"></script>

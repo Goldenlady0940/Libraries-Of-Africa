@@ -22,14 +22,4 @@
                 fname.disabled = true;
             });
     </script>
-  
-      // if(isset($_POST['del'])){
-      //     $id = $_REQUEST['id'];
-      //     $sql = "delete from useraccount where id='$id'";
-      //     $result = mysqli_connect($con,$sql);
-      //     if ($result) {
-      //         header('location:index.php');
-      //     }
-      // }
-      // 
     

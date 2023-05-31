@@ -1,3 +1,4 @@
+<!-- ig we dont need this page -->
 <?php
             session_start();
            require"connect.php";
