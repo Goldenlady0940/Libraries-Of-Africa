@@ -36,38 +36,56 @@
         <table>
                 <thead>
                 <tr>
-                    <th>Book Id</th>
+                    <!-- <th>Book Id</th>
                     <th>Book Name</th>
                     <th>Author's Name</th>
                     <th>Quantity</th>
                     <th>Status</th>
                     <th>Price</th>
-                    <th>Action</th>
+                    <th>Action</th> -->
+                    <th>Book Name</th>
+                    <th>Author's Name</th>
                 </tr>
                 </thead>
                 <tbody>
                     <?php
                 // session_start();
                 require"connect.php";
-                $sql="SELECT * FROM bookManage";
-                $result=$con->query($sql);
-                if(!$result){
-                    die("Invalid query: " .mysqli::$error);
-                }
-                while($row=$result->fetch_assoc()){
-                    // $_SESSION['bookId']=$_POST['bookIdfk'];
-                    echo "<tr>
-                    <td>" .$row["bookIdfk"]."</td>
-                    <td>".$row["bookname"]."</td>
-                    <td>".$row["authorName"]."</td>
-                    <td>".$row["quantity"]."</td>
-                    <td><p>".$row["status"]."</p></td>
-                    <td><strong>".$row["price"]."$</strong></td>
-                    <td><a href='edit.php?bookIdfk= " .$row["bookIdfk"]."'><img src='edit.PNG' class='editpic' alt=''></a>
-                     <a href='delete.php?bookIdfk= " .$row["bookIdfk"]."'><img src='delete.PNG' class='deletepic' alt=''></a></td>
-                </tr>";
-            
-                }
+                // if(isset($_GET['BOOK_FKID'])){
+                //     $id= $_GET['BOOK_FKID'];
+                // }
+                // $sql="SELECT * FROM new_book WHERE BOOK_ID='$id' ";
+                //$sql="SELECT * FROM bookManage";
+                if(isset($_GET['BOOK_FKID'])){
+                    $id = $_GET['BOOK_FKID'];
+                    // $mysqli = new mysqli("localhost", "username", "password", "database_name");
+                    if ($stmt = $mysqli->prepare("SELECT * FROM new_book WHERE BOOK_ID = ?")) {
+                    //   $stmt->bind_param("i", $id);
+                      $stmt->execute();
+                      $result = $stmt->get_result();
+                      while ($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                     
+                        <td>".$row["BOOK_NAME"]."</td>
+                        <td>".$row["AUTHOR"]."</td>
+                       
+                   </tr>";
+               
+                      }
+                      $stmt->close();
+                    }
+                    $mysqli->close();
+                  }
+                  
+                // $result=$con->query($sql);
+                // if(!$result){
+                //     die("Invalid query: " .mysqli::$error);
+                // }
+                // while($row=$result->fetch_assoc()){
+
+                //     // $_SESSION['bookId']=$_POST['bookIdfk'];
+                   
+                // }
                
                 // if(isset($_POST['edit'])){
                 //     header("Location:homepage.php");

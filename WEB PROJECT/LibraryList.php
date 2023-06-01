@@ -23,8 +23,19 @@
     <section class="data">
 <div class="income"><img src="images/income1.PNG" alt="">
         <h2>Sales Income</h2></div>
- <div class="user"> <img src="images/clients.PNG" alt="">
-        <h2>Total Users</h2></div>
+        <?php
+        require"connect.php";
+                $sql2 ="SELECT COUNT(*) as total_libraries FROM new_library";
+                $result2= mysqli_query($con,$sql2);
+                if($result2->num_rows > 0){
+                    $row = $result2->fetch_assoc();
+                    $total_libraries = $row['total_libraries'];
+                }else{
+                    $total_libraries = 0;
+                }
+        ?>  
+ <div class="user"> <img src="images/clients.PNG" alt=""><?php echo $total_libraries; ?>
+        <h2>Total Libraries</h2></div>
 <div class="order"><img src="images/order1.PNG" alt="">
         <h2>Orders</h2></div>
        
@@ -46,7 +57,6 @@
                 </thead>
                 <tbody>
                     <?php
-                // session_start();
                 require"connect.php";
                 $sql="SELECT * FROM new_library";
                 $result=$con->query($sql);

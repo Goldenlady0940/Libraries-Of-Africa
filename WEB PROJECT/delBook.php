@@ -1,3 +1,4 @@
+<!-- we dont need this page -->
 <?php
 include('connect.php');
 $id = $_REQUEST['id'];
