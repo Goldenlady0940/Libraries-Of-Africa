@@ -86,7 +86,8 @@
                             //if the selected country matches with the one in the database take the id of that country and use for reference
                             if($row['COUNTRY_NAME'] == $_SESSION['COUNTRY_NAME_NEW']){
                                 $id = $row['COUNTRY_ID'];
-                                $sql3="CALL insertLibrary('$libname', '$country', '$link', '$pass','$id')";
+                                 $sql3=" INSERT INTO `new_library` (`NAME`, `LOCATION`, `WIKI_LINK`, `LIB_PASS_WORD`,`colib_ID`)VALUES ('$libname', '$country', '$link', '$pass','$id')";
+                            //   CALL insertLibrary('$libname', '$country', '$link', '$pass','$id')";
                                 $result2= mysqli_query($con,$sql3);
             
                                  // Check if the query was executed successfully

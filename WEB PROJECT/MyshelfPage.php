@@ -5,27 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>shelf</title>
-    <link rel="stylesheet" href="myshelf.css">
+    <!-- <link rel="stylesheet" href="myshelf.css"> -->
     <link rel="stylesheet" href="adminpage.css">
 
 </head>
 <body>
     <!-- session_start(); -->
         <div class="wrapper">
-        <aside>
+        <!-- <aside>
        
         <?php session_start();  echo $_SESSION['username']; echo $_SESSION['CUSTID']; ?>
             <h2 align="center">My Shelf</h2>
             <footer>
                 <button id="actbtn" class="footer">Account</button>
             </footer>
-        </aside>
+        </aside> -->
         <div class="bookList">
    
-        <section class="header">
+        <!-- <section class="header"> -->
            
         <h1>Your Order</h1>
-        </section>
+        <!-- </section> -->
         <section class="body">
         <table>
                 <thead>
@@ -42,7 +42,7 @@
                 <tbody>
                     <?php
                 // session_start();
-                require"connect.php";
+                require "connect.php";
                 $sql="SELECT * FROM request WHERE USER_FKID={$_SESSION['CUSTID']}";
                 $result=$con->query($sql);
                 if(!$result){

@@ -56,39 +56,79 @@ input:focus{border-bottom:1px solid #1abc9c; outline:none;}
   .col{display:block; margin:auto; width:100%; text-align:center;}
 }
     </style>
+   
 </head>
 <body>
-    
+
 <div class="container">
     <div class="card">
-      <button class="proceed"><svg class="sendicon" width="24" height="24" viewBox="0 0 24 24">
+      <button class="proceed"  name="done"><svg class="sendicon" width="24" height="24" viewBox="0 0 24 24" >
     <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
   </svg></button>
      <img src="https://seeklogo.com/images/V/VISA-logo-62D5B26FE1-seeklogo.com.png" class="logo-card">
    <!-- <label>Card number:</label>
    <input id="user" type="text" class="input cardnumber"  placeholder="+251-999-999-9999"> -->
+   <?php
+    session_start();
+    require "connect.php";
+    if(isset($_GET['id'])){
+      $bid= $_GET['id'];
+      
+  }
+      // $uid= $_SESSION['uid'];
+    $users=$_SESSION['username'];
+    $sql = "SELECT *FROM useraccount WHERE USER_NAME='$users'";
+    $sql2 = "SELECT * FROM new_book WHERE BOOK_ID = '$bid'";
+   
+    $result = mysqli_query($con, $sql);
+    $result2 = mysqli_query($con, $sql2);
+    while ($row = mysqli_fetch_assoc($result)) {?>
    <label>Name:</label>
-   <input class="input name"  placeholder="your name">
-   <!-- <label class="toleft">CCV:</label>
-   <input class="input toleft ccv" placeholder="321"> -->
+   <input class="input name"  placeholder="your name" value="<?php echo $row['FIRST_NAME'] . " " .$row['LAST_NAME']?>">
     </div>
+    <?php
+  }?>
     <div class="receipt">
+   <?php
+    if (!$result || !$result2 ) {
+      printf("Error: %s\n", mysqli_error($con));
+      exit();
+  } 
+  else{
+    while ($row = mysqli_fetch_assoc($result2)) {?>
       <div class="col"><p>Cost:</p>
-      <h2 class="cost">$400</h2><br>
-      <p>Name:</p>
-      <h2 class="seller">Codedgar</h2>
+      <h2 class="cost"><?php echo "$".$row['PRICE']?></h2><br>
+      <p>Seller:</p>
+      <h2 class="seller">Employee</h2>
       </div>
       <div class="col">
         <p>Bought Items:</p>
-        <h3 class="bought-items">Corsair Mouse</h3>
-        <p class="bought-items description">Gaming mouse with shiny lights</p>
-        <p class="bought-items price">$200 (50% discount)</p><br>
-        <h3 class="bought-items">Gaming keyboard</h3>
+        <h3 class="bought-items">Book Name: <?php echo $row['BOOK_NAME']?></h3>
+        <p class="bought-items description"> Book Author: <?php echo $row['AUTHOR']?></p>
+        <!-- <p class="bought-items price">$200 (50% discount)</p><br> -->
+        <!-- <h3 class="bought-items">Gaming keyboard</h3>
         <p class="bought-items description">Look mommmy, it has colors!</p>
-        <p class="bought-items price">$200 (50% discount)</p><br>
+        <p class="bought-items price">$200 (50% discount)</p><br> -->
       </div>
       <p class="comprobe">This information will be sended to your email</p>
     </div>
   </div>
+  <?php
+         }
+    }
+    if(isset($_POST['[done]'])){
+          $req_date = $_POST['req_date'];
+       $sql3 =  " UPDATE `request`  SET USER_FKID = '{$_SESSION['USERID']}', BOOK_FKID = '$bid', REQUEST_DATE = '$req_date', PAYMENT_STATUS = 'paid' WHERE BOOK_FKID = '$bid'";
+      $result4=mysqli_query($con,$sql3);
+          //  "INSERT INTO `request` (`USER_FKID`, `BOOK_FKID`, `REQUEST_DATE`, `PAYMENT_STATUS`) 
+          // VALUES ({$_SESSION['USERID']}, '$bid', '$req_date', 'payed'); ";
+          // 
+          if($result4){
+              header("Location:chapa.php?id= " .$row["BOOK_ID"]."");
+          }else{
+              echo"invalid";
+          }
+        }
+      ?>
 </body>
 </html>

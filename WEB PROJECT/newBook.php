@@ -105,7 +105,7 @@
                  VALUES ( '$libid', ' $name', '$author', ' $price', '$file_name', '$file_name', '$genre'); ";
                  $result=mysqli_query($con,$sql);
                  if($result){
-                     echo"done";
+                     header('Location: "liblog.php"');
                  }
                  else{
                      print_r($errors);

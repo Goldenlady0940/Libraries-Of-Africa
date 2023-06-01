@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="loginpage.css">
+    <!-- <link rel="stylesheet" href="loginpage.css"> -->
     <link rel="stylesheet" href="homepages.css">
     <script src="include.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
@@ -47,28 +47,8 @@
                         header("Location:newBook.php");
                     }
                 }
-                
-                // $sql = "SELECT COUNTRY_NAME FROM country";
-                // $result = mysqli_query($con, $sql);
-
-                // echo "<select name='country_dropdown'>";
-                // echo  "<option value=''>Search By Country</option>";
-                // while ($row = mysqli_fetch_assoc($result)) {
-                //     echo "<option value='" . $row['COUNTRY_NAME'] . "'>" . $row['COUNTRY_NAME'] . "</option>";
-                // }
-                //   echo "</select>";
-                // // mysqli_close($con);
-                // if(isset($_POST['country_dropdown'])){
-                //     header("Location:MainPage.php");
-                //     // $selectedOption = $_POST['country_dropdown'];
-                //     // echo "the selected opyion is:" .$selectedOption;
-                // }
-
-                // else{
-                //     header("Location:newBook.php");
-                // }
                 ?>
-            <img id="img2" src="pic.png" alt="">
+            <img id="img2" src="images/pic.png" alt="">
         </section>
         <section class="description" id="blog">
            <div class="desc">

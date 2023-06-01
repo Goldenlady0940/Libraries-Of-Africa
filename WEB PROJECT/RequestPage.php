@@ -33,7 +33,8 @@
     require"connect.php";
     if(isset($_GET['uid'])){
         $id= $_GET['uid'];
-    }
+        
+    }$_SESSION['uid']=$id;
             $user=$_SESSION['username'];
     $sql = "SELECT *FROM useraccount WHERE USER_NAME='$user'";
     $sql2 = "SELECT * FROM new_book WHERE BOOK_ID = '$id';";
@@ -41,7 +42,7 @@
     $result = mysqli_query($con, $sql);
     $result2 = mysqli_query($con, $sql2);
     if (!$result || !$result2 ) {
-      printf("Error: %s\n", mysqli_error($conn));
+      printf("Error: %s\n", mysqli_error($con));
       exit();
   } 
   else{
@@ -109,7 +110,7 @@
                     VALUES ({$_SESSION['USERID']}, '$id', '$req_date', 'Pending'); ";
                     $result4=mysqli_query($con,$sql3);
                     if($result4){
-                        header("Location:chapa.php");
+                        header("Location:chapa.php?id= " .$row["BOOK_ID"]."");
                     }else{
                         echo"invalid";
                     }

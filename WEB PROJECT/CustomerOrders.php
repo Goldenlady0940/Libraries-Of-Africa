@@ -112,7 +112,7 @@ if($result2->num_rows > 0){
                <td>".$row["BOOK_FKID"]."</td>
                <td>".$row["REQUEST_DATE"]."</td>
                <td><p>".$row["PAYMENT_STATUS"]."</p></td>
-               <td> <a href='delete.php?USER_FKID= " .$row["USER_FKID"]."'>Approve</td>
+               <td> <a href='approvedOrders.php?USER_FKID= " .$row["USER_FKID"]."'>Approve</td>
               
                
              

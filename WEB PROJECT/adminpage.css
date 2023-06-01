@@ -181,7 +181,7 @@ aside{
     background-color: grey;
     width: 200px;
     height: 100vh;
-    float: left;
+    float: bottom;
 }
 button{
     margin-top: 5px;

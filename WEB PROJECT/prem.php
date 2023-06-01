@@ -71,14 +71,14 @@ session_start();
         exit();
         }
         else {
-        $sql = "SELECT * FROM useraccount WHERE USER_NAME = '$user'";
-        $result = mysqli_query($con, $sql);
+        // $sql = "SELECT * FROM useraccount WHERE USER_NAME = '$user'";
+        // $result = mysqli_query($con, $sql);
 
-        if(mysqli_num_rows($result) > 0){
-            header("Location:premiumpage.php?error=User already registered!");
-            exit();
-         }
-         else{
+        // if(mysqli_num_rows($result) > 0){
+        //     header("Location:premiumpage.php?error=User already registered!");
+        //     exit();
+        //  }
+        //  else{
 
             // Define the SQL query
             // $sql2 = "INSERT INTO `useraccount` (`FIRST_NAME`, `LAST_NAME`, `GENDER`, `PHONE`, `EMAIL`, `NATIONAL_ID`, `COUNTRY`, `CITY`, `REGION`, `USER_NAME`, `PASS_WORD`)
@@ -98,7 +98,7 @@ session_start();
             // Close the database connection
             mysqli_close($con);
 
-         }
+        //  }
     }
 }
     else{
