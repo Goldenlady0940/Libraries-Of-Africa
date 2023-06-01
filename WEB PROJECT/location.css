@@ -1,4 +1,4 @@
-/* basic style  */
+
 *{
     font-family: "Footlight MT Light";
 }
@@ -10,7 +10,7 @@ img{
 height: 50vh; 
 text-align:center;
 background-color: #706671;
-/* background-image: url(images/1.jpg); */
+
 background-size: 100% 100%;
 color:#fff;
 padding-top:200px; 
@@ -91,8 +91,43 @@ cursor: pointer;
     margin-left: 100px;
 }
 /* top end  */
+ 
+/* Improve the overall layout */
 
 
-
-
+  table {
+    
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 4px 4px 4px 4px #ffbf23;
+  }
+  
+  thead {
+    background-color: #333;
+    color: white;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 1.2rem;
+  }
+  
+  th {
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  td a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  td a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
+  button{
+    background-color: #ffbf23;
+  }
+  
 

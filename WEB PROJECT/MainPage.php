@@ -6,40 +6,7 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>mainPage</title>
-    <style>
-        .wrapper{
-            display: flex;
-        }
-    
-        .finish
-        {
-            background-color: rgb(253, 212, 135);
-            height:40px;
-            width:100px;
-            border-radius: 20px;
-
-        }
-        .pdf{
-            background-color: #d24041;
-            color: white;
-            font-size: 30px;
-        }
-        table{
-            width: 200px;
-            height: 100px;
-        }
-        /* button{
-            background-color: bisque;
-           margin-left: 150px;
-        } */
-        #shelf{
-            background-color: bisque;
-           margin-left: 7rem;
-           width: 10rem;
-           height: 2rem;
-           
-        }
-    </style>
+    <link rel="stylesheet" href="mainpage.css">
     <link rel="stylesheet" href="index.cs">
 </head>
 <body>
@@ -103,11 +70,16 @@
            
             while ($row = mysqli_fetch_assoc($result)) {
                 $_SESSION['BOOKID']= $row['BOOK_ID'];
+                $coverPath = $row['coverPath'];
                 echo "<form method='post'>";
             echo "<table border='1px'>";
 
             echo "<tr height='250px' width='300px'>";
-            echo "<td>". $row["COVER"] . "</td>";
+            echo "<td>  
+            <img src='$coverPath' alt='Image'/>
+        
+            </td>";
+            
             echo "</tr>";
 
             echo "<tr>";
@@ -132,10 +104,7 @@
         echo "</div>";
                 
         if(isset($_POST['dwn_pdf'])){
-       
-
-
-          
+     
         $sql5 = "SELECT * FROM new_book WHERE BOOK_ID = {$_SESSION['BOOKID']}";
         $result5 = mysqli_query($con, $sql5);
         $row = mysqli_fetch_assoc($result5);
@@ -153,17 +122,18 @@
         }
     else{
 
-      echo"hello";
+    //   echo"hello";
         
     }
 
           echo "<h2> BIOGRAPHY BOOKS</h2>";
         echo "<div class='wrapper'>";  
             while ($row = mysqli_fetch_assoc($result3)) {
+                $coverPath = $row['coverPath'];
                 echo "<table border='1px'>";
 
                 echo "<tr height='250px' width='300px'>";
-                echo "<td>". $row["COVER"] . "</td>";
+                echo "<td> <img src='$coverPath' alt='Image'/></td>";
                 echo "</tr>";
 
                 echo "<tr>";
@@ -189,10 +159,11 @@
         echo "<div class='wrapper'>";  
 
             while ($row = mysqli_fetch_assoc($result4)) {
+                $coverPath = $row['coverPath'];
                 echo "<table border='1px'>";
 
                 echo "<tr height='250px' width='300px'>";
-                echo "<td>". $row["COVER"] . "</td>";
+                echo "<td><img src='$coverPath' alt='Image'/></td>";
                 echo "</tr>";
 
                 echo "<tr>";

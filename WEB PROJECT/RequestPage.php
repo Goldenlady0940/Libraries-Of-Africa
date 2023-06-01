@@ -5,29 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>request</title>
-    <style>
-        .fname {
-            padding: 0;
-            width:70%;
-            height: 30px;
-            left: 0;
-            border: 1px solid #cdcdcd;
-            border-color: rgba(0,0,0,.15);
-            background-color: white;
-            font-size: 16px;
-        }
-            .finish
-            {
-                background-color: rgb(253, 212, 135);
-                height:40px;
-                width:100px;
-                border-radius: 20px;
-                
-            }
-        
-    </style>
+   <link rel="stylesheet" href="request.css">
 </head>
-<body bgcolor="mintcream">
+<body >
     <?php
     session_start();
     require"connect.php";
